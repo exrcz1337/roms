@@ -60,14 +60,24 @@
                 </div>
                 
                 <h2>${translations[currentLang].screenshots}</h2>
-                <div class="fw-screenshots">
-                    ${fw.screenshots.map(src => `<img src="${src}" alt="Screenshot">`).join('')}
+                <div class="screenshot-slider-container">
+                    <button class="slider-btn prev-btn" onclick="moveSlider(-1)">&#10094;</button>
+                    <div class="fw-screenshots" id="slider-track">
+                        ${fw.screenshots.map(src => `<img src="${src}" alt="Screenshot">`).join('')}
+                    </div>
+                    <button class="slider-btn next-btn" onclick="moveSlider(1)">&#10095;</button>
                 </div>
                 
                 <div class="download-section">
                     <a href="${fw.downloadLink}" class="btn btn-large" target="_blank">${translations[currentLang].download}</a>
                 </div>
             `;
+        }
+
+        function moveSlider(direction) {
+            const track = document.getElementById('slider-track');
+            // Scroll by one image width roughly (approx 200px image + gap)
+            track.scrollBy({ left: direction * 250, behavior: 'smooth' });
         }
 
         document.addEventListener('DOMContentLoaded', renderFirmwareDetails);

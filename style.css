@@ -258,26 +258,46 @@ h2 {
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
 }
 
+.screenshot-slider-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 2rem;
+    gap: 10px;
+}
+
+.slider-btn {
+    background-color: var(--card-bg);
+    color: var(--accent-color);
+    border: 1px solid #333;
+    font-size: 1.5rem;
+    padding: 1rem 0.5rem;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.slider-btn:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
 .fw-screenshots {
     display: flex;
     gap: 1.5rem;
     overflow-x: auto;
-    padding: 1rem 0 2rem 0;
-    margin-bottom: 2rem;
-    scrollbar-width: thin;
-    scrollbar-color: var(--accent-color) var(--card-bg);
+    padding: 1rem 0 1rem 0;
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar in IE/Edge */
+    scroll-behavior: smooth;
+    flex-grow: 1;
 }
 
 .fw-screenshots::-webkit-scrollbar {
-    height: 8px;
-}
-.fw-screenshots::-webkit-scrollbar-track {
-    background: #111;
-    border-radius: 4px;
-}
-.fw-screenshots::-webkit-scrollbar-thumb {
-    background-color: var(--accent-color);
-    border-radius: 4px;
+    display: none; /* Hide scrollbar in Chrome/Safari */
 }
 
 .fw-screenshots img {
@@ -286,6 +306,7 @@ h2 {
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    flex-shrink: 0; /* Prevent images from shrinking */
 }
 
 .fw-screenshots img:hover {
