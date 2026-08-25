@@ -23,9 +23,15 @@ const translations = {
     }
 };
 
+const devices = {
+    "agate": "Xiaomi 11T (agate)",
+    "gale": "Redmi 13C (gale)"
+};
+
 const firmwares = [
     {
         id: "HyperOS 3.1 Global",
+        device: "agate",
         name: "HyperOS 3.1 Global",
         description: {
             en: "HyperOS 3.1 - fast, beautiful, smooth firmware from Xiaomi",
@@ -49,6 +55,7 @@ const firmwares = [
     },
     {
         id: "ColorOS 16.0.1 China WIP",
+        device: "agate",
         name: "ColorOS 16.0.1 China WIP",
         description: {
             en: "ColorOS 16.0.1 is the latest version of OnePlus's custom ROM, based on Android 16.",

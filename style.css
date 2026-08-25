@@ -112,6 +112,19 @@ h1 {
     border-radius: 2px;
 }
 
+.device-section {
+    margin-bottom: 4rem;
+}
+
+.device-title {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.5rem;
+}
+
 .firmware-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -143,7 +156,7 @@ h1 {
     border-color: var(--primary-hover);
 }
 
-.firmware-card h3 {
+.firmware-card h4 {
     margin-bottom: 1rem;
     color: #fff;
     font-weight: 400;

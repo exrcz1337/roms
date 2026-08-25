@@ -23,7 +23,7 @@
 
     <main class="container">
         <h2 data-i18n="firmwares" class="section-title">Available Firmwares</h2>
-        <div class="firmware-grid" id="firmware-list">
+        <div id="firmware-list">
             <!-- Firmwares will be loaded here -->
         </div>
     </main>
@@ -41,16 +41,34 @@
             const list = document.getElementById('firmware-list');
             list.innerHTML = '';
             
-            firmwares.forEach(fw => {
-                const card = document.createElement('div');
-                card.className = 'firmware-card';
-                card.innerHTML = `
-                    <h3>${fw.name}</h3>
-                    <p>${fw.description[currentLang]}</p>
-                    <a href="firmware.html?id=${fw.id}" class="btn" data-i18n-btn="readMore">${translations[currentLang].readMore}</a>
-                `;
-                list.appendChild(card);
-            });
+            for (const [deviceKey, deviceName] of Object.entries(devices)) {
+                const deviceFws = firmwares.filter(fw => fw.device === deviceKey);
+                
+                const section = document.createElement('div');
+                section.className = 'device-section';
+                section.innerHTML = `<h3 class="device-title">${deviceName}</h3>`;
+                
+                const grid = document.createElement('div');
+                grid.className = 'firmware-grid';
+                
+                if (deviceFws.length === 0) {
+                    grid.innerHTML = `<p style="color:#888; grid-column: 1 / -1; text-align: center;">No firmwares yet</p>`;
+                } else {
+                    deviceFws.forEach(fw => {
+                        const card = document.createElement('div');
+                        card.className = 'firmware-card';
+                        card.innerHTML = `
+                            <h4>${fw.name}</h4>
+                            <p>${fw.description[currentLang]}</p>
+                            <a href="firmware.html?id=${fw.id}" class="btn" data-i18n-btn="readMore">${translations[currentLang].readMore}</a>
+                        `;
+                        grid.appendChild(card);
+                    });
+                }
+                
+                section.appendChild(grid);
+                list.appendChild(section);
+            }
         }
 
         document.addEventListener('DOMContentLoaded', renderFirmwares);
