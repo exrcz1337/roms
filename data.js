@@ -33,9 +33,13 @@ const firmwares = [
         },
         banner: "https://via.placeholder.com/1000x300?text=HyperOS+3.1+Global+Banner",
         screenshots: [
-            "https://via.placeholder.com/200x400?text=Screen+1",
-            "https://via.placeholder.com/200x400?text=Screen+2",
-            "https://via.placeholder.com/200x400?text=Screen+3"
+            "https://github.com/exrcz1337/site/blob/main/screenshots/agate/HyperOS3.1GL/about.jpg?raw=true",
+            "https://github.com/exrcz1337/site/blob/main/screenshots/agate/HyperOS3.1GL/lockscreen.jpg?raw=true",
+            "https://github.com/exrcz1337/site/blob/main/screenshots/agate/HyperOS3.1GL/main.jpg?raw=true",
+            "https://github.com/exrcz1337/site/blob/main/screenshots/agate/HyperOS3.1GL/otpechatok.jpg?raw=true",
+            "https://github.com/exrcz1337/site/blob/main/screenshots/agate/HyperOS3.1GL/ksu.jpg?raw=true",
+            "https://github.com/exrcz1337/site/blob/main/screenshots/agate/HyperOS3.1GL/hz.jpg?raw=true",
+            "https://github.com/exrcz1337/site/blob/main/screenshots/agate/HyperOS3.1GL/etc.jpg?raw=true
         ],
         tutorial: {
             en: "1. Unlock Bootloader\n2. Unpack .zip\n3. start flash_all.bat",
@@ -44,8 +48,8 @@ const firmwares = [
         downloadLink: "#"
     },
     {
-        id: "ColorOS 16.0.1 China",
-        name: "ColorOS 16.0.1 China",
+        id: "ColorOS 16.0.1 China WIP",
+        name: "ColorOS 16.0.1 China WIP",
         description: {
             en: "ColorOS 16.0.1 is the latest version of OnePlus's custom ROM, based on Android 16.",
             ru: "ColorOS 16.0.1 — последняя версия кастомной прошивки OPPO, основанная на Android 16."
