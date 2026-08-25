@@ -1,17 +1,17 @@
 const translations = {
     en: {
-        title: "My Custom Firmwares",
+        title: "exerczz1 dump",
         home: "Home",
-        firmwares: "Available Firmwares",
+        firmwares: "Available ROMs",
         readMore: "Read More",
         tutorial: "Flashing Tutorial",
         screenshots: "Screenshots",
-        download: "Download Firmware",
+        download: "Download ROMs",
         back: "Back to Home",
         language: "Language:"
     },
     ru: {
-        title: "Мои Кастомные Прошивки",
+        title: "Мои Прошивки",
         home: "Главная",
         firmwares: "Доступные Прошивки",
         readMore: "Подробнее",
@@ -37,7 +37,7 @@ const firmwares = [
             en: "HyperOS 3.1 - fast, beautiful, smooth firmware from Xiaomi",
             ru: "HyperOS 3.1 — быстрая, красивая, плавная прошивка от Xiaomi"
         },
-        banner: "https://via.placeholder.com/1000x300?text=HyperOS+3.1+Global+Banner",
+        banner: "https://github.com/exrcz1337/roms/blob/main/screenshots/agate/HyperOS3.1GL/banner.jpg?raw=true",
         screenshots: [
             "https://github.com/exrcz1337/site/blob/main/screenshots/agate/HyperOS3.1GL/about.jpg?raw=true",
             "https://github.com/exrcz1337/site/blob/main/screenshots/agate/HyperOS3.1GL/lockscreen.jpg?raw=true",
