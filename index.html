@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">My Custom Firmwares</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+    <header>
+        <div class="container header-content">
+            <h1 data-i18n="title">My Custom Firmwares</h1>
+            <div class="lang-switcher">
+                <label data-i18n="language">Language:</label>
+                <select id="lang-select">
+                    <option value="ru">Русский</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2 data-i18n="firmwares" class="section-title">Available Firmwares</h2>
+        <div class="firmware-grid" id="firmware-list">
+            <!-- Firmwares will be loaded here -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        function renderFirmwares() {
+            const list = document.getElementById('firmware-list');
+            list.innerHTML = '';
+            
+            firmwares.forEach(fw => {
+                const card = document.createElement('div');
+                card.className = 'firmware-card';
+                card.innerHTML = `
+                    <h3>${fw.name}</h3>
+                    <p>${fw.description[currentLang]}</p>
+                    <a href="firmware.html?id=${fw.id}" class="btn" data-i18n-btn="readMore">${translations[currentLang].readMore}</a>
+                `;
+                list.appendChild(card);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', renderFirmwares);
+        window.addEventListener('languageChanged', renderFirmwares);
+    </script>
+</body>
+</html>

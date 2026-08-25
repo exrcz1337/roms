@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firmware Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="nav-link" data-i18n="back">Back to Home</a>
+            <div class="lang-switcher">
+                <label data-i18n="language">Language:</label>
+                <select id="lang-select">
+                    <option value="ru">Русский</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" id="firmware-details">
+        <!-- Details will be loaded here -->
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        function renderFirmwareDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const fwId = urlParams.get('id');
+            const fw = firmwares.find(f => f.id === fwId);
+            
+            const container = document.getElementById('firmware-details');
+            
+            if (!fw) {
+                container.innerHTML = '<p>Firmware not found.</p>';
+                return;
+            }
+
+            document.title = fw.name;
+
+            container.innerHTML = `
+                <h1 class="fw-title">${fw.name}</h1>
+                <img src="${fw.banner}" alt="Banner" class="fw-banner">
+                
+                <p class="fw-desc">${fw.description[currentLang]}</p>
+                
+                <h2>${translations[currentLang].tutorial}</h2>
+                <div class="fw-tutorial">
+                    ${fw.tutorial[currentLang].replace(/\n/g, '<br>')}
+                </div>
+                
+                <h2>${translations[currentLang].screenshots}</h2>
+                <div class="fw-screenshots">
+                    ${fw.screenshots.map(src => `<img src="${src}" alt="Screenshot">`).join('')}
+                </div>
+                
+                <div class="download-section">
+                    <a href="${fw.downloadLink}" class="btn btn-large" target="_blank">${translations[currentLang].download}</a>
+                </div>
+            `;
+        }
+
+        document.addEventListener('DOMContentLoaded', renderFirmwareDetails);
+        window.addEventListener('languageChanged', renderFirmwareDetails);
+    </script>
+</body>
+</html>
