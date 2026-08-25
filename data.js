@@ -39,7 +39,7 @@ const firmwares = [
             "https://github.com/exrcz1337/site/blob/main/screenshots/agate/HyperOS3.1GL/otpechatok.jpg?raw=true",
             "https://github.com/exrcz1337/site/blob/main/screenshots/agate/HyperOS3.1GL/ksu.jpg?raw=true",
             "https://github.com/exrcz1337/site/blob/main/screenshots/agate/HyperOS3.1GL/hz.jpg?raw=true",
-            "https://github.com/exrcz1337/site/blob/main/screenshots/agate/HyperOS3.1GL/etc.jpg?raw=true
+            "https://github.com/exrcz1337/site/blob/main/screenshots/agate/HyperOS3.1GL/etc.jpg?raw=true"
         ],
         tutorial: {
             en: "1. Unlock Bootloader\n2. Unpack .zip\n3. start flash_all.bat",
